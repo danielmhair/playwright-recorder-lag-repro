@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Example page with over 15,000 elements</title>
+    <script type="text/javascript">
+      window.__qualiti__ = {}
+      window.__qualiti__.testExecution = true
+    </script>
+  </head>
+  <body>
+    <div id="container">
+      <h1>Example page with over 15,000 elements</h1>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum euismod arcu at aliquet lacinia. Nam vel sapien hendrerit, vestibulum odio id, ullamcorper quam. Nullam euismod rutrum arcu, vitae placerat justo gravida ut. Sed nec dui vitae ex euismod laoreet. Ut in nibh ac elit lacinia auctor. Nam ornare erat enim, vel pretium velit bibendum a. Donec vel lacus sit amet nisi dignissim faucibus. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Duis euismod suscipit augue, id sollicitudin lectus faucibus sit amet. Aliquam erat volutpat. Donec laoreet mi vitae justo pellentesque, id gravida nulla volutpat.</p>
+
+      <!-- Creating 15,000 div elements -->
+      <div class="depth-1">
+        <div class="depth-2">
+          <div class="depth-3">
+            <!-- ... -->
+            <div class="depth-20">
+              <p>This is a div element with a depth of 20</p>
+            </div>
+            <div class="depth-20">
+              <p>Input element with a depth of 20</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Repeat 15,000 times -->
+
+    </div>
+
+  <script>
+  // Select the container div element
+  const container = document.getElementById('container');
+
+  // Create 15,000 div elements and add them to the container
+  for (let i = 0; i < 3750; i++) {
+    const divElement = document.createElement('div');
+    divElement.classList.add('depth-1');
+
+    for (let j = 2; j <= 3; j++) {
+      const childElement = document.createElement('div');
+      childElement.classList.add(`depth-${j}`);
+      if (j === 3) {
+        childElement.id = 'inner-child-id'
+        divElement.appendChild(childElement);
+      }
+    }
+
+    for (let j = 2; j <= 2; j++) {
+      const inputElement = document.createElement("input");
+      // Set the type attribute to "text"
+	  inputElement.id = 'test'
+      inputElement.setAttribute("type", "text");
+
+      if (j === 2) {
+        inputElement.setAttribute("name", "myInput" + j);
+        inputElement.setAttribute("value", "myInput" + j)
+        divElement.appendChild(inputElement);
+      }
+    }
+
+    container.appendChild(divElement);
+  }
+  </script>
+  <script type="text/javascript" src="__EVENT_TRACKER_SCRIPT__"></script>
+  </body>
+</html>

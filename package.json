@@ -1,0 +1,21 @@
+{
+  "name": "playwright-recorder-lag-repro",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/danielmhair/playwright-recorder-lag-repro.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/danielmhair/playwright-recorder-lag-repro/issues"
+  },
+  "homepage": "https://github.com/danielmhair/playwright-recorder-lag-repro#readme",
+  "devDependencies": {
+    "@playwright/test": "^1.31.2"
+  }
+}
